@@ -1,0 +1,11 @@
+4 3 1 paths 120 sumP 1 Q(A) 26/315 TV 5/117
+5 4 1 paths 5040 sumP 1 Q(A) 8/135 TV 122/1463
+5 3 1/4 paths 720 sumP 1 Q(A) 2432/69615 TV 14/209
+4 4 4 paths 360 sumP 1 Q(A) 92800/1716099 TV 697/15486
+1/4 f2==mu True f3==mu*kap True eta==mu^2kap True
+1 f2==mu True f3==mu*kap True eta==mu^2kap True
+4 f2==mu True f3==mu*kap True eta==mu^2kap True
+ODE ok
+1/4 nu-1 = -0.008964143426294821 (order 1/n)
+1 nu-1 = -0.002997002997002997 (order 1/n)
+4 nu-1 = -0.0014996250937265683 (order 1/n)
