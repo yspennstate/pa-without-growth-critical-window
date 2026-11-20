@@ -30,7 +30,7 @@
 
 \begin{document}
 \begin{abstract}
-In Pittel's random graph process on $[n]$, the next edge is a non-adjacent pair $uv$ chosen with probability proportional to $(d_u+\alpha)(d_v+\alpha)$, where $d_u,d_v$ are the current degrees and $\alpha>0$ is fixed. Janson and Warnke asked for the limit law of the component sizes in the critical window around $m_c=\alpha n/(2(\alpha+1))$ edges, a question they could settle only for the corresponding multigraph process. We prove that, for $m/n$ converging to a finite limit, the whole simple graph process is asymptotically equal in total variation to the multigraph process conditioned to stay simple. Consequently, in the critical window the ordered component sizes divided by $n^{2/3}$ converge in distribution, in $\ell^2$, to Aldous's limit for the Erd\H{o}s--R\'enyi critical window, multiplied by a constant and with a rescaled window parameter; both constants are explicit functions of $\alpha$.
+In Pittel's random graph process on $[n]$, the next edge is a non-adjacent pair $uv$ chosen with probability proportional to $(d_u+\alpha)(d_v+\alpha)$, with $d_u,d_v$ the current degrees and $\alpha>0$ fixed. Janson and Warnke compared this simple process with a multigraph process whose edge endpoints are drawn from a P\'olya urn with initial weights $\alpha$, and asked for the limit law of the component sizes in the critical window around $m_c=\alpha n/(2(\alpha+1))$ edges, which they settled only for the multigraph process. We prove that, for $m/n\to T<\infty$, the path of the simple process is asymptotically equal in total variation to that of the multigraph process conditioned to be simple. Consequently, in the critical window the ordered component sizes divided by $n^{2/3}$ converge in distribution in $\ell^2$ to an explicit constant multiple of Aldous's Erd\H{o}s--R\'enyi limit, with a rescaled window parameter.
 \end{abstract}
 \maketitle
 
@@ -40,23 +40,23 @@ Pittel \cite{Pi10} introduced the following random graph process on the vertex s
 \begin{equation}\label{eq:simple}
 \frac{(d_u+\alpha)(d_v+\alpha)}{\sum_{u'v'\notin E(G_k),\,u'\ne v'}(d_{u'}+\alpha)(d_{v'}+\alpha)}.
 \end{equation}
-For $\alpha\to\infty$ this is the Erd\H{o}s--R\'enyi process. We call this the simple process and write $G^{\alpha}_{n,m}$ for the graph after $m$ steps. Pittel proved that a giant component appears at $m_c=\alpha n/(2(\alpha+1))$ edges, and he showed that in the critical window the $j$th largest component has order $n^{2/3}$ for each fixed $j$ \cite{Pi10} (see also \cite[Problem~5.3]{JW21}). Janson and Warnke \cite{JW21} determined the size of the giant component in the supercritical phase, confirming a conjecture of Pittel. Their method compares $G^\alpha_{n,m}$ with $G^{\alpha,*}_{n,m}$, the multigraph process of Section~\ref{sec:intro-multi}, whose conditional law given its degree sequence is the configuration model, and uses known results for the configuration model. Chen \cite{Ch26} has since determined the asymptotic size of the largest component in the subcritical phase, answering Problem~5.2 of \cite{JW21}.
+For $\alpha\to\infty$ this is the Erd\H{o}s--R\'enyi process. We call this the simple process and write $G^{\alpha}_{n,m}$ for the graph after $m$ edges. Pittel proved that a giant component appears at $m_c=\alpha n/(2(\alpha+1))$ edges, and he showed that in the critical window the $j$th largest component has order $n^{2/3}$ for each fixed $j$ \cite{Pi10} (see also \cite[Problem~5.3]{JW21}). Janson and Warnke \cite{JW21} determined the size of the giant component in the supercritical phase, confirming a conjecture of Pittel. Their method compares $G^\alpha_{n,m}$ with $G^{\alpha,*}_{n,m}$, the multigraph process of Section~\ref{sec:intro-multi}, whose conditional law given its degree sequence is the configuration model, and uses known results for the configuration model. Chen \cite{Ch26} has since determined the asymptotic size of the largest component in the subcritical phase, answering Problem~5.2 of \cite{JW21}.
 
-Problem~5.3 of \cite{JW21} asks, for $m=m_c(1+\lambda n^{-1/3})$ with $\lambda$ bounded, whether the ordered component sizes $(L_j/n^{2/3})_{j\ge1}$ of $G^\alpha_{n,m}$ converge in distribution. Janson and Warnke note that for the multigraph process $G^{\alpha,*}_{n,m}$ this follows from their conditioning approach together with the critical-window theorem for the configuration model of Dhara, van der Hofstad, van Leeuwaarden and Sen \cite{DHLS17}. For $G^\alpha_{n,m}$ it remains open. Their transfer theorem \cite[Theorem~2.2]{JW21} bounds probabilities under $G^\alpha_{n,m}$ by a constant times probabilities under $G^{\alpha,*}_{n,m}$, and, as they note, such a bound does not transfer convergence in distribution. We answer the question for fixed $\alpha$ by proving that the two processes are close in total variation once the multigraph process is conditioned to remain simple.
+Problem~5.3 of \cite{JW21} asks, for $m=m_c(1+\lambda n^{-1/3})$ with $\lambda$ bounded, whether the ordered component sizes $(L_j/n^{2/3})_{j\ge1}$ of $G^\alpha_{n,m}$ converge in distribution. Janson and Warnke note that for the multigraph process $G^{\alpha,*}_{n,m}$ they do: given its degree sequence it is the configuration model \cite[Theorem~2.4]{JW21}, to which the critical-window theorem of Dhara, van der Hofstad, van Leeuwaarden and Sen \cite{DHLS17} applies. They leave the question open for $G^\alpha_{n,m}$. The transfer theorem \cite[Theorem~2.2]{JW21} bounds the probability of an event under $G^\alpha_{n,m}$ by a constant times its probability under $G^{\alpha,*}_{n,m}$, up to an additive $o(1)$. Such a bound carries events of probability tending to zero from the multigraph process to the simple process, but not limit laws. We answer the question for fixed $\alpha$ by proving that the simple process is close in total variation to the multigraph process conditioned to be simple.
 
-Let $b_k$ be the probability that the $(k+1)$-st multigraph edge is a loop or joins two adjacent vertices. A path of $m$ simple graphs has multigraph probability $\prod_{k<m}(1-b_k)$ times its probability under the simple process (Lemma~\ref{lem:lik}), and Janson and Warnke bound this product above and below by constants on paths with $\sum_v d_v^3=O(n)$ \cite[Lemma~3.3]{JW21}. Along the simple process the product converges to a constant: for $m/n\to T$,
+Given a simple graph $G_k$ with $k$ edges, let $b_k$ be the conditional probability, given that the multigraph process is at $G_k$, that its next edge is a loop or joins two adjacent vertices. A path, that is, a sequence of $m$ distinct edges, none of them a loop, has multigraph probability $\prod_{k<m}(1-b_k)$ times its probability under the simple process (Lemma~\ref{lem:lik}), where $G_k$ is the graph formed by the first $k$ edges. Janson and Warnke bound this product above and below by constants on paths with $\sum_v d_v^3=O(n)$ \cite[Lemma~3.3]{JW21}. Along the simple process the product is asymptotically deterministic: for $m/n\to T$,
 \[
 nb_k=c+2c^2\,\frac kn+o_p(1)\quad\text{uniformly in }k\le m,
 \qquad
 \prod_{k<m}(1-b_k)\ \to\ e^{-cT-c^2T^2},
 \qquad c=\frac{\alpha+1}{\alpha},
 \]
-in probability. Here $b_k$ is a function of $k$ and of the statistics $S_k=\sum_v(d_v+\alpha)^2$ and $R_k=\sum_{uv\in E(G_k)}(d_u+\alpha)(d_v+\alpha)$, and $S_k/n$ and $R_k/n$ follow the solution of a pair of linear differential equations (Lemma~\ref{lem:fluid}).
+in probability. Here $b_k$ depends only on $k$ and on the sums $S_k=\sum_v(d_v+\alpha)^2$ and $R_k=\sum_{uv\in E(G_k)}(d_u+\alpha)(d_v+\alpha)$, where $E(G_k)$ is the edge set of $G_k$, and $S_k/n$ and $R_k/n$ follow the solution of a triangular pair of differential equations (Lemma~\ref{lem:fluid}). A likelihood ratio with a positive deterministic limit puts the simple process within $o(1)$ in total variation of the multigraph process conditioned to be simple (Theorem~\ref{thm:tv}).
 
 \subsection{The multigraph process}\label{sec:intro-multi}
-The multigraph process $(G^{\alpha,*}_{n,k})_{k\ge0}$ is a P\'olya urn. Each vertex starts with weight $\alpha$. Labels $\omega_1,\omega_2,\dots\in[n]$ are drawn one at a time; a label is $v$ with probability proportional to the current weight of $v$, and after each draw the weight of the drawn label increases by one. The $k$th edge joins $\omega_{2k-1}$ and $\omega_{2k}$; it is a loop when they are equal, and a loop adds two to the degree. After $k$ edges the weight of $v$ is $w_v=d_v+\alpha$, with $d_v$ the multigraph degree, and the total weight is $W=n\alpha+2k$. The next edge is therefore $uv$ with $u\ne v$ with probability $2w_uw_v/(W(W+1))$ and a loop at $v$ with probability $w_v(w_v+1)/(W(W+1))$. This is the multigraph process of \cite{JW21}. The label sequence is exchangeable, so given the degree sequence $\boldsymbol d$, $G^{\alpha,*}_{n,m}$ is the configuration model $G^*_{\boldsymbol d}$ \cite[Theorem~2.4]{JW21}.
+The multigraph process $(G^{\alpha,*}_{n,k})_{k\ge0}$ is a P\'olya urn. Each vertex starts with weight $\alpha$. Labels $\omega_1,\omega_2,\dots\in[n]$ are drawn one at a time; a label is $v$ with probability proportional to the current weight of $v$, and after each draw the weight of the drawn label increases by one. The $k$th edge joins $\omega_{2k-1}$ and $\omega_{2k}$; it is a loop when they are equal, and a loop adds two to the degree. After $k$ edges the weight of $v$ is $w_v=d_v+\alpha$, with $d_v$ the multigraph degree, and the total weight is $W=n\alpha+2k$. The next edge is therefore $uv$ with $u\ne v$ with probability $2w_uw_v/(W(W+1))$ and a loop at $v$ with probability $w_v(w_v+1)/(W(W+1))$. This is the multigraph process of \cite{JW21}. The label sequence is exchangeable, so given the degree sequence $\boldsymbol d$, $G^{\alpha,*}_{n,m}$ is the configuration model $G^*_{\boldsymbol d}$ \cite[Theorem~2.4]{JW21}, the multigraph obtained by giving each vertex $v$ exactly $d_v$ half-edges and pairing all half-edges uniformly at random.
 
-We keep the order of the edges. Let $P_n$ be the law of the path $(G_k)_{0\le k\le m}$ of the simple process \eqref{eq:simple}, viewed as a sequence of $m$ distinct edges, and let $Q_n$ be the law of the edge sequence of the multigraph process up to $m$ edges. Let $A_n$ be the event that $G^{\alpha,*}_{n,m}$ is simple. Since edges are never removed, $A_n$ is the event that every graph in the path is simple.
+We keep the order of the edges. Let $P_n$ be the law of the path of the simple process \eqref{eq:simple}, and let $Q_n$ be the law of the first $m$ edges of the multigraph process, in order, which may include loops and repeated edges. Let $A_n$ be the event that $G^{\alpha,*}_{n,m}$ is simple. Since edges are never removed, $A_n$ is the event that the first $m$ edges of the multigraph process form a path. The total variation distance $\|P-Q\|_{\TV}$ between two laws is the largest difference between the probabilities that they give to the same event.
 
 \subsection{Results}\label{sec:results}
 
@@ -67,7 +67,7 @@ Q_n(A_n)\to e^{-cT-c^2T^2}\qquad\text{and}\qquad \bigl\|P_n-Q_n(\,\cdot\mid A_n)
 \]
 \end{theorem}
 
-The first limit also follows from Janson's theorem on the probability that the configuration model is simple \cite{Ja09}, combined with the degree estimates of \cite[Theorem~2.5]{JW21}; see the end of Section~\ref{sec:prooftv}. Total variation cannot increase under a measurable mapping, so Theorem~\ref{thm:tv} also holds for the final graph, and for any function of the path. Every simple graph $G$ with $m$ edges and degrees $(d_v)$ arises from $m!\,2^m$ label sequences, each of probability $\prod_v(\alpha)_{d_v}/(n\alpha)_{2m}$, where $(x)_d=x(x+1)\cdots(x+d-1)$. This gives the following static description.
+For $T>0$ the first limit also follows from Janson's theorem on the probability that the configuration model is simple \cite[Corollary~1.5]{Ja09}, combined with the degree estimates of \cite[Theorem~2.5]{JW21}; see the end of Section~\ref{sec:prooftv}. Total variation cannot increase under a measurable mapping, so Theorem~\ref{thm:tv} also holds for the final graph, and for any function of the path. Every simple graph $G$ with $m$ edges and degrees $(d_v)$ arises from $m!\,2^m$ label sequences, each of probability $\prod_v(\alpha)_{d_v}/(n\alpha)_{2m}$, where $(x)_d=x(x+1)\cdots(x+d-1)$. This gives the following static description.
 
 \begin{corollary}\label{cor:static}
 Under the assumptions of Theorem~\ref{thm:tv}, let $\Pi_{n,m}$ be the probability measure on simple graphs with vertex set $[n]$ and $m$ edges with $\Pi_{n,m}(G)\propto\prod_{v}(\alpha)_{d_v(G)}$. Then $\|\mathcal L(G^\alpha_{n,m})-\Pi_{n,m}\|_{\TV}\to0$.
@@ -78,29 +78,26 @@ For $\theta\in\mathbb R$ let $\boldsymbol\gamma(\theta)$ be the vector of length
 \begin{theorem}\label{thm:window}
 Fix $\alpha>0$ and $\lambda\in\mathbb R$, put $m_c=\alpha n/(2(\alpha+1))$ and $m=\lfloor m_c(1+\lambda n^{-1/3})\rfloor$, and let $L_1\ge L_2\ge\dots$ be the component sizes of $G^\alpha_{n,m}$. Then, in distribution in $\ldown$,
 \[
-\bigl(n^{-2/3}L_j\bigr)_{j\ge1}\ \to\ a_\alpha\,\boldsymbol\gamma(b_\alpha\lambda),\qquad a_\alpha=\Bigl(\frac{\alpha^2}{(\alpha+1)(\alpha+2)}\Bigr)^{1/3},\quad b_\alpha=\Bigl(\frac{\alpha(\alpha+1)}{(\alpha+2)^2}\Bigr)^{1/3}.
+\bigl(n^{-2/3}L_j\bigr)_{j\ge1}\ \to\ a_\alpha\,\boldsymbol\gamma(\theta_\alpha\lambda),\qquad a_\alpha=\Bigl(\frac{\alpha^2}{(\alpha+1)(\alpha+2)}\Bigr)^{1/3},\quad \theta_\alpha=\Bigl(\frac{\alpha(\alpha+1)}{(\alpha+2)^2}\Bigr)^{1/3}.
 \]
 \end{theorem}
 
 Both constants tend to $1$ as $\alpha\to\infty$, and $m_c\sim n/2$, which recovers Aldous's theorem for the Erd\H{o}s--R\'enyi graph as a formal limit. The second part of Problem~5.3 of \cite{JW21}, whether the limit is the Erd\H{o}s--R\'enyi one when $\alpha=\alpha(n)\gg n^{2/3}$, remains open.
 
-The two one-step probabilities of Lemma~\ref{lem:lik} are written in the proof of \cite[Lemma~3.3]{JW21}, where Janson and Warnke compare the normalizing factors of the two processes step by step, following Pittel \cite[Section~3]{Pi10}. The error terms are controlled with the degree bounds of \cite{JW21}. Theorem~\ref{thm:window} then follows from Theorem~\ref{thm:tv}, the degree-sequence estimates of \cite{JW21}, the critical-window theorem of \cite{DHLS17} for the configuration model, and Lemma~\ref{lem:simple}, which transfers that theorem to a uniform simple graph with given degrees. This transfer is stated without proof in \cite[Remark~5]{DHLS17}, and Bhamidi and Sen use it in their scaling limit for the components of a uniform simple graph with given degrees \cite[Theorem~5.3 and Section~9]{BS20}. Lemma~\ref{lem:simple} proves it under Assumption~1 of \cite{DHLS17}, following the argument that Dhara, van der Hofstad, van Leeuwaarden and Sen give for degrees with infinite third moment \cite[Section~7]{DHLS20}. The bipartite version of the process is studied by Maitra \cite{Ma25}.
+The two one-step probabilities of Lemma~\ref{lem:lik} appear in the proof of \cite[Lemma~3.3]{JW21}, where Janson and Warnke compare the normalizing factors of the two processes step by step, following Pittel \cite[Section~3]{Pi10}. The drifts of $S_k$ and $R_k$ are controlled through the maximum-degree bound of Lemma~\ref{lem:deg}, which follows from \cite[Theorems~2.2 and~2.5]{JW21}. Theorem~\ref{thm:window} then follows from Theorem~\ref{thm:tv}, the degree-sequence estimates of \cite[Theorem~2.5]{JW21}, the critical-window theorem of \cite{DHLS17} for the configuration model, and Lemma~\ref{lem:simple}, which extends that theorem to a uniform simple graph with given degrees. This extension is stated without proof in \cite[Remark~5]{DHLS17}, which indicates that the argument of Joseph \cite[Section~7]{Jo14} for i.i.d.\ degrees carries over. Bhamidi and Sen state the limit for the uniform simple graph with reference to that remark \cite[Theorem~5.3]{BS20} and use it in the proof of their scaling limit for the metric structure of its components \cite[Section~9]{BS20}. Riordan proves a limit law in the critical window for the configuration model with bounded degrees and states, without details, that it holds also for the simple graph \cite[Theorems~1.3 and~1.5]{Ri12}. Hatami and Molloy determine the order of magnitude of the largest component of a uniform simple graph with given degrees in the critical window \cite[Theorem~1.1]{HM12}. For degrees with infinite third moment, Dhara, van der Hofstad, van Leeuwaarden and Sen prove the corresponding statement for the simple graph \cite[Theorem~3 and Section~7]{DHLS20}, and the proof of Lemma~\ref{lem:simple} follows their route under Assumption~1 of \cite{DHLS17}. The bipartite version of the process is studied by Maitra \cite{Ma25}.
 
-The two laws in Theorem~\ref{thm:tv} are not equal for finite $n$. For $n=5$, $m=4$ and $\alpha=1$, exact enumeration of all $5040$ paths gives $Q_n(A_n)=8/135$ and $\|P_n-Q_n(\cdot\mid A_n)\|_{\TV}=122/1463$. The notation is collected in Appendix~\ref{app:notation}.
+The two laws in Theorem~\ref{thm:tv} are not equal for finite $n$. For $n=5$, $m=4$ and $\alpha=1$, summing over all $5040$ paths gives $Q_n(A_n)=8/135$ and $\|P_n-Q_n(\cdot\mid A_n)\|_{\TV}=122/1463$. The notation is collected in Appendix~\ref{app:notation}.
 
 \section{The likelihood ratio}\label{sec:lik}
 
-Throughout, $\alpha>0$ is fixed, $\PP$ and $\EE$ denote probability and expectation, and all limits are taken as $n\to\infty$. The constants implied by $O(\cdot)$ and $O_p(\cdot)$ may depend on $\alpha$ and on the constants $C$ and $T$ fixed in the statements, but not on $n$ or $k$. At a simple graph $G_k$ with $k$ edges put
-\[
-w_v=d_v+\alpha,\qquad W=n\alpha+2k,\qquad S_k=\sum_v w_v^2,\qquad R_k=\sum_{uv\in E(G_k)}w_uw_v .
-\]
+Throughout, $\alpha>0$ is fixed, $\PP$ and $\EE$ denote probability and expectation, and all limits are taken as $n\to\infty$. The constants implied by $O(\cdot)$ and $O_p(\cdot)$ may depend on $\alpha$ and on the constants $C$ and $T$ fixed in the statements, but not on $n$ or $k$. At a simple graph $G_k$ with $k$ edges, $w_v=d_v+\alpha$ and $W=n\alpha+2k$ as in Section~\ref{sec:intro-multi}, and the sums of Section~\ref{sec:intro} are $S_k=\sum_v w_v^2$ and $R_k=\sum_{uv\in E(G_k)}w_uw_v$.
 
 \begin{lemma}\label{lem:lik}
 Let $G_k$ be simple and let
 \begin{equation}\label{eq:b}
 b_k=\frac{S_k+W+2R_k}{W(W+1)} .
 \end{equation}
-Then $b_k$ is the probability that the next edge of the multigraph process started from $G_k$ is a loop or joins two adjacent vertices. For every sequence $g=(e_1,\dots,e_m)$ of distinct edges,
+Then $b_k$ is the conditional probability, given that the multigraph process is at $G_k$, that its next edge is a loop or joins two adjacent vertices. For every path $g=(e_1,\dots,e_m)$,
 \begin{equation}\label{eq:lik}
 Q_n(g)=P_n(g)\,Z_n(g),\qquad Z_n(g)=\prod_{k=0}^{m-1}(1-b_k),
 \end{equation}
@@ -108,7 +105,7 @@ where $b_k$ is evaluated at the graph formed by $e_1,\dots,e_k$.
 \end{lemma}
 
 \begin{proof}
-A loop at $v$ has probability $w_v(w_v+1)/(W(W+1))$, and an edge between the adjacent vertices $u,v$ has probability $2w_uw_v/(W(W+1))$; summing gives $(S_k+W+2R_k)/(W(W+1))$. Every non-adjacent pair $uv$ has multigraph probability $2w_uw_v/(W(W+1))$, and these probabilities add up to $1-b_k$. The simple process chooses the pair $uv$ with probability $w_uw_v/\sum_{xy\notin E}w_xw_y=2w_uw_v/(W(W+1)(1-b_k))$. Taking the product over the steps of $g$ gives \eqref{eq:lik}. The same comparison of normalizing factors appears in the proof of \cite[Lemma~3.3]{JW21}.
+A loop at $v$ has probability $w_v(w_v+1)/(W(W+1))$, and an edge between the adjacent vertices $u,v$ has probability $2w_uw_v/(W(W+1))$; summing gives $(S_k+W+2R_k)/(W(W+1))$. Every non-adjacent pair $uv$ has multigraph probability $2w_uw_v/(W(W+1))$, and these probabilities add up to $1-b_k$. The simple process chooses the pair $uv$ with probability $w_uw_v/\sum_{xy\notin E}w_xw_y=2w_uw_v/(W(W+1)(1-b_k))$. Taking the product over the steps of $g$ gives \eqref{eq:lik}.
 \end{proof}
 
 The term $W$ in the numerator of \eqref{eq:b} comes from the reinforcement of the first label of an edge before the second is drawn.
@@ -147,7 +144,7 @@ Stop the process at the first $k$ with $\max_vd_v(G_k)>K_n$. Up to that time the
 \[
 s'=\frac{4s}{x}+2,\quad s(0)=\alpha^2,\qquad r'=\frac{4r}{x}+\Bigl(\frac sx+1\Bigr)^2,\quad r(0)=0,
 \]
-up to errors that are $o_p(1)$ uniformly on $[0,C]$. Both equations are linear with Lipschitz constant at most $4/\alpha$. A discrete Gronwall argument gives the uniform convergence of $S_k/n$ first; the forcing term of the second equation then converges uniformly, and Gronwall's argument applies again. Finally, $s=cx^2-x$ has $s(0)=c\alpha^2-\alpha=\alpha^2$ and $s'=4cx-2=4s/x+2$, and since $s/x+1=cx$, $r=c^2tx^2$ has $r'=c^2x^2+4c^2tx=4r/x+(cx)^2$.
+up to errors that are $o_p(1)$ uniformly on $[0,C]$. Each equation is linear in its own unknown with coefficient $4/x\le4/\alpha$, and the first does not involve $r$. A discrete Gronwall argument gives the uniform convergence of $S_k/n$ first; the forcing term of the second equation then converges uniformly, and Gronwall's argument applies again. Finally, $s=cx^2-x$ has $s(0)=c\alpha^2-\alpha=\alpha^2$ and $s'=4cx-2=4s/x+2$, and since $s/x+1=cx$, $r=c^2tx^2$ has $r'=c^2x^2+4c^2tx=4r/x+(cx)^2$.
 \end{proof}
 
 \section{Proof of Theorem~\ref{thm:tv}}\label{sec:prooftv}
@@ -160,13 +157,13 @@ In particular $\max_kb_k=O_p(1/n)$, so $-\log(1-b_k)=b_k+O(b_k^2)$ and $\sum_kb_
 \[
 -\log Z_n=\sum_{k<m}-\log(1-b_k)\ \to\ \int_0^T(c+2c^2t)\,dt=cT+c^2T^2
 \]
-in $P_n$-probability. Put $z=e^{-cT-c^2T^2}$. Since $0\le Z_n\le1$, $Z_n\to z$ in $L^1(P_n)$. Summing \eqref{eq:lik} over all sequences of distinct edges gives $Q_n(A_n)=\EE_{P_n}Z_n\to z$. The law $Q_n(\cdot\mid A_n)$ has density $Z_n/\EE_{P_n}Z_n$ with respect to $P_n$, so
+in $P_n$-probability. Put $z=e^{-cT-c^2T^2}$. Since $0\le Z_n\le1$, $Z_n\to z$ in $L^1(P_n)$. Summing \eqref{eq:lik} over all paths gives $Q_n(A_n)=\EE_{P_n}Z_n\to z$. The law $Q_n(\cdot\mid A_n)$ has density $Z_n/\EE_{P_n}Z_n$ with respect to $P_n$, so
 \[
 \bigl\|P_n-Q_n(\cdot\mid A_n)\bigr\|_{\TV}=\frac{\EE_{P_n}|Z_n-\EE_{P_n}Z_n|}{2\,\EE_{P_n}Z_n}\to0,
 \]
 because $z>0$. \qed
 
-The limit agrees with Janson's formula $e^{-\nu/2-\nu^2/4}$ for the probability that the configuration model is simple \cite{Ja09}, where $\nu=\sum d_v(d_v-1)/\sum d_v$. Indeed, under $Q_n$ with $m/n\to T>0$ the mean degree is $2m/n\to2T$ and $\frac1n\sum_vd_v(d_v-1)\to(2T)^2(1+\alpha^{-1})$ in probability \cite[Theorem~2.5 and Remark~2.7]{JW21}, so $\nu\to2cT$ and $e^{-\nu/2-\nu^2/4}\to e^{-cT-c^2T^2}$. At the critical time $T=\alpha/(2(\alpha+1))=1/(2c)$ we have $\nu\to1$ and the limit is $e^{-3/4}$.
+For $T>0$ the limit agrees with Janson's formula $e^{-\nu/2-\nu^2/4}$ for the probability that the configuration model is simple \cite[Corollary~1.5]{Ja09}, where $\nu=\nu(\boldsymbol d)=\sum_v d_v(d_v-1)/\sum_v d_v$ for a degree sequence $\boldsymbol d$. Indeed, for the degree sequence of $G^{\alpha,*}_{n,m}$ under $Q_n$ with $m/n\to T>0$ the mean degree is $2m/n\to2T$ and $\frac1n\sum_vd_v(d_v-1)\to(2T)^2(1+\alpha^{-1})$ in probability \cite[Theorem~2.5 and Remark~2.7]{JW21}, so $\nu\to2cT$ and $e^{-\nu/2-\nu^2/4}\to e^{-cT-c^2T^2}$. At the critical time $T=\alpha/(2(\alpha+1))=1/(2c)$ we have $\nu\to1$ and the limit is $e^{-3/4}$.
 
 \section{The critical window}\label{sec:window}
 
@@ -185,7 +182,7 @@ we have $\EE D=\mu$, $\EE D(D-1)=\mu$ and $\EE D(D-1)(D-2)=\mu\kappa$. Thus $\EE
 
 We use the critical-window theorem of \cite{DHLS17}. For a degree sequence $\boldsymbol d=(d_v)_{v\in[n]}$ with even sum let $D_n$ be the degree of a uniform vertex. Assumption~1 of \cite{DHLS17} requires that $D_n\to\bar D$ in distribution for a random variable $\bar D$ with $\EE\bar D^3<\infty$, that $\EE D_n^3\to\EE\bar D^3$, that
 \begin{equation}\label{eq:nu}
-\nu_n:=\frac{\sum_vd_v(d_v-1)}{\sum_vd_v}=1+\lambda n^{-1/3}+o(n^{-1/3}),
+\nu_n:=\nu(\boldsymbol d)=\frac{\sum_vd_v(d_v-1)}{\sum_vd_v}=1+\lambda n^{-1/3}+o(n^{-1/3}),
 \end{equation}
 and that $\PP(\bar D=1)>0$. Under this assumption Theorem~1 of \cite{DHLS17} states that the ordered component sizes of the configuration model $G^*_{\boldsymbol d}$, divided by $n^{2/3}$, converge in distribution in $\ldown$ to the ordered excursion lengths of
 \begin{equation}\label{eq:W}
@@ -193,14 +190,14 @@ and that $\PP(\bar D=1)>0$. Under this assumption Theorem~1 of \cite{DHLS17} sta
 \end{equation}
 above its running minimum, where $\bar\mu=\EE\bar D$ and $\bar\eta=\EE\bar D\,\EE\bar D^3-(\EE\bar D^2)^2$. For $\bar D=D$, the negative binomial law above, $\bar\mu=\mu$ and $\bar\eta=\eta$.
 
-Remark~5 of \cite{DHLS17} states that the same holds for the configuration model conditioned on being simple, that is, for a uniform simple graph with degree sequence $\boldsymbol d$. It indicates that the argument of Joseph \cite[Section~7]{Jo14} for i.i.d.\ degrees carries over, and no proof is given there. Bhamidi and Sen state this limit for the uniform simple graph with reference to that remark \cite[Theorem~5.3]{BS20} and use it in the proof of their scaling limit for the metric structure of its components \cite[Section~9]{BS20}. Earlier results on the critical window with given degrees are those of Riordan, who proves a limit law for the configuration model with bounded degrees and states, without details, that it transfers to the simple graph \cite[Theorems~1.3 and~1.5]{Ri12}, and of Hatami and Molloy, who determine the order of magnitude of the largest component of a uniform simple graph with given degrees in the critical window \cite[Theorem~1.1]{HM12}. For degrees with infinite third moment, Dhara, van der Hofstad, van Leeuwaarden and Sen prove the transfer to the simple graph \cite[Theorem~3 and Section~7]{DHLS20}. Their proof stops the exploration at the first completed component after a fixed time, so that the unexplored part is a configuration model given its degrees, and applies the limit of the probability of simplicity to that part. We follow the same route under Assumption~1 of \cite{DHLS17}. The probability of simplicity is \cite[Corollary~1.5]{Ja09}, and the simplicity of the explored part is deduced from it rather than from a count of loops and multiple edges.
+Remark~5 of \cite{DHLS17} states that the same holds for the configuration model conditioned to be simple, that is, for a uniform simple graph with degree sequence $\boldsymbol d$; the earlier work on this statement is described after Theorem~\ref{thm:window}. We prove it under Assumption~1 of \cite{DHLS17} by the route of \cite[Section~7]{DHLS20}. Their proof stops the exploration at the first completed component after a fixed time, so that the unexplored part is a configuration model given its degrees, and applies the limit of the probability of simplicity to that part. The probability of simplicity is \cite[Corollary~1.5]{Ja09}. The proof below deduces the simplicity of the explored part from it, where \cite{DHLS20} use a count of loops and multiple edges.
 
 \begin{lemma}\label{lem:simple}
 Let $\boldsymbol d=\boldsymbol d^{(n)}$ satisfy Assumption~1 of \cite{DHLS17}. Then the scaled ordered component sizes of a uniform simple graph with degree sequence $\boldsymbol d$ converge in distribution in $\ldown$ to the ordered excursion lengths of \eqref{eq:W} above its running minimum.
 \end{lemma}
 
 \begin{proof}
-Let $G=G^*_{\boldsymbol d}$, let $A$ be the event that $G$ is simple, put $\ell_n=\sum_vd_v$, and let $\boldsymbol\zeta=(\zeta_j)_{j\ge1}$ be the ordered component sizes of $G$ divided by $n^{2/3}$, and $\boldsymbol\xi$ the limit in \cite[Theorem~1]{DHLS17}, so that $\boldsymbol\zeta\to\boldsymbol\xi$ in distribution in $\ldown$. A uniform simple graph with degree sequence $\boldsymbol d$ is $G$ conditioned on $A$. Put $\Delta_n=\max_vd_v$. Since $D_n\to\bar D$ in distribution and $\EE D_n^3\to\EE\bar D^3<\infty$, the variables $D_n^3$ are uniformly integrable, so $\EE[D_n^3\mathbf 1_{\{D_n>K\}}]$ is small for large $K$, uniformly in $n$. A vertex of degree $\Delta_n$ contributes $\Delta_n^3/n$ to this expectation once $\Delta_n>K$, hence $\Delta_n^3/n\to0$, that is, $\Delta_n=o(n^{1/3})$. Since $\ell_n/n\to\EE\bar D>0$, $\Delta_n=o(\ell_n^{1/2})$ and $\nu_n\to1$, \cite[Corollary~1.5]{Ja09} gives $\PP(A)\to e^{-3/4}$.
+Let $G=G^*_{\boldsymbol d}$, let $A$ be the event that $G$ is simple, put $\ell_n=\sum_vd_v$, and let $\boldsymbol\zeta=(\zeta_j)_{j\ge1}$ be the ordered component sizes of $G$ divided by $n^{2/3}$, and $\boldsymbol\xi$ the limit in \cite[Theorem~1]{DHLS17}, so that $\boldsymbol\zeta\to\boldsymbol\xi$ in distribution in $\ldown$. A uniform simple graph with degree sequence $\boldsymbol d$ is $G$ conditioned on $A$. Put $\Delta_n=\max_vd_v$. Since $D_n\to\bar D$ in distribution and $\EE D_n^3\to\EE\bar D^3<\infty$, the variables $D_n^3$ are uniformly integrable, so $\EE[D_n^3\mathbf 1_{\{D_n>J\}}]$ is small for large $J$, uniformly in $n$. A vertex of degree $\Delta_n$ contributes $\Delta_n^3/n$ to this expectation once $\Delta_n>J$, hence $\Delta_n^3/n\to0$, that is, $\Delta_n=o(n^{1/3})$. Since $\ell_n/n\to\EE\bar D>0$, $\Delta_n=o(\ell_n^{1/2})$ and $\nu_n\to1$, \cite[Corollary~1.5]{Ja09} gives $\PP(A)\to e^{-3/4}$.
 
 \emph{Reduction to finitely many coordinates.} For $x\in\ldown$ let $\pi_kx=(x_1,\dots,x_k,0,0,\dots)$. By the continuous mapping theorem $\|\boldsymbol\zeta-\pi_k\boldsymbol\zeta\|^2=\sum_{j>k}\zeta_j^2$ converges in distribution to $\sum_{j>k}\xi_j^2$, which tends to $0$ almost surely as $k\to\infty$. Hence $\lim_k\limsup_n\PP(\|\boldsymbol\zeta-\pi_k\boldsymbol\zeta\|>\varepsilon)=0$ for every $\varepsilon>0$, and the same holds with $\PP(\cdot\mid A)$, because $\PP(A)$ is bounded away from $0$. It therefore suffices to prove, for each $k$ and each bounded uniformly continuous $h$ on $\mathbb R^k$,
 \begin{equation}\label{eq:indep}
@@ -215,7 +212,7 @@ then $\EE[h(\zeta_1,\dots,\zeta_k)\mid A]\to\EE h(\xi_1,\dots,\xi_k)$, and for b
 
 \emph{Size of the explored part.} At time $\tau$ the exploration has completed the component in progress at time $t_0n^{2/3}$ and has not started another, so $|\mathcal V|\le t_0n^{2/3}+n^{2/3}\zeta_1$, and $\zeta_1$ is tight. Let $\varepsilon'>0$ and choose $\beta>0$ with $\limsup_n\PP(|\mathcal V|>\beta n^{2/3})\le\varepsilon'/2$. For $j\le\beta n^{2/3}$, the conditional expectation of the degree of the $j$-th discovered vertex given the past is at most $\sum_vd_v^2/(\ell_n-j\Delta_n)\le2\sum_vd_v^2/\ell_n$ for large $n$, because $j\Delta_n\le\beta n^{2/3}\Delta_n=o(n)$, and this bound is $O(1)$. So the first $\beta n^{2/3}$ discovered vertices have total degree of expectation $O(n^{2/3})$, and by Markov's inequality there is $\beta'$ with $\limsup_n\PP(\Sigma_{\mathcal V}>\beta'n^{2/3})\le\varepsilon'$, where $\Sigma_{\mathcal V}:=\sum_{v\in\mathcal V}d_v$.
 
-\emph{The unexplored part.} Let $\boldsymbol d''=\boldsymbol d''^{(n)}$ be any sequence obtained from $\boldsymbol d$ by deleting vertices of total degree at most $\beta'n^{2/3}$, with even sum. Then $\sum_vd''_v\ge\ell_n-\beta'n^{2/3}$, the maximum degree is still at most $\Delta_n$, and $\sum_vd''_v(d''_v-1)$ differs from $\sum_vd_v(d_v-1)$ by at most $\beta'n^{2/3}\Delta_n=o(n)$, so the quantity $\nu$ of \eqref{eq:nu} for $\boldsymbol d''$ tends to $1$. By \cite[Corollary~1.5]{Ja09}, $\sigma(\boldsymbol d'')\to e^{-3/4}$. As the sequence $\boldsymbol d''$ was arbitrary, the supremum of $|\sigma(\boldsymbol d'')-e^{-3/4}|$ over all such $\boldsymbol d''$ tends to $0$, and therefore $\sigma(\boldsymbol d')\to e^{-3/4}$ in probability.
+\emph{The unexplored part.} Let $\boldsymbol d''=\boldsymbol d''^{(n)}$ be any sequence obtained from $\boldsymbol d$ by deleting vertices of total degree at most $\beta'n^{2/3}$, with even sum. Then $\sum_vd''_v\ge\ell_n-\beta'n^{2/3}$, the maximum degree is still at most $\Delta_n$, and $\sum_vd''_v(d''_v-1)$ differs from $\sum_vd_v(d_v-1)$ by at most $\beta'n^{2/3}\Delta_n=o(n)$, so $\nu(\boldsymbol d'')\to1$. By \cite[Corollary~1.5]{Ja09}, $\sigma(\boldsymbol d'')\to e^{-3/4}$. As the sequence $\boldsymbol d''$ was arbitrary, the supremum of $|\sigma(\boldsymbol d'')-e^{-3/4}|$ over all such $\boldsymbol d''$ tends to $0$, and therefore $\sigma(\boldsymbol d')\to e^{-3/4}$ in probability.
 
 \emph{The explored part is simple.} By \eqref{eq:condA}, $\PP(A)=\EE[\mathbf 1_{A_1}\sigma(\boldsymbol d')]$. Since $0\le\sigma\le1$ and $\sigma(\boldsymbol d')\to e^{-3/4}$ in probability, $\EE\,\sigma(\boldsymbol d')\to e^{-3/4}$, and with $\PP(A)\to e^{-3/4}$ this gives $\EE[\mathbf 1_{A_1^c}\sigma(\boldsymbol d')]\to0$. Hence
 \[
@@ -231,7 +228,7 @@ since $\EE[h(\boldsymbol H)\mathbf 1_A]=\EE[h(\boldsymbol H)\mathbf 1_{A_1}\sigm
 \end{proof}
 
 \begin{proof}[Proof of Theorem~\ref{thm:window}]
-Write $\widehat Q_n=Q_n(\cdot\mid A_n)$ for the law of the multigraph path conditioned to be simple, and $\boldsymbol d$ for the degree sequence of its final graph. Conditionally on $\boldsymbol d$, the final graph under $Q_n$ is $G^*_{\boldsymbol d}$ \cite[Theorem~2.4]{JW21}, so under $\widehat Q_n$ it is a uniform simple graph with degree sequence $\boldsymbol d$.
+Write $\widehat Q_n=Q_n(\cdot\mid A_n)$ for the law of the first $m$ edges of the multigraph process conditioned to be simple, and $\boldsymbol d$ for the degree sequence of its final graph. Conditionally on $\boldsymbol d$, the final graph under $Q_n$ is $G^*_{\boldsymbol d}$ \cite[Theorem~2.4]{JW21}, so under $\widehat Q_n$ it is a uniform simple graph with degree sequence $\boldsymbol d$.
 
 We first check Assumption~1 for $\boldsymbol d$. Under $Q_n$, by \cite[Theorem~2.5 and Remark~2.6]{JW21} the proportion of vertices of degree $k$ equals $\PP(Y_n=k)+O_p(n^{-1/2})$ for each $k$, and $\frac1n\sum_vd_v^j=\EE Y_n^j+O_p(n^{-1/2})$ for $j\le3$, where $Y_n$ is negative binomial with parameters $\alpha$ and $p_n=2m/(n\alpha+2m)$. Since $2m/n\to\mu$, $Y_n\to D$ in distribution with convergence of moments. Moreover $\sum_vd_v=2m$ exactly, and $\EE Y_n(Y_n-1)=(2m/n)^2(1+\alpha^{-1})$ \cite[Remark~2.7]{JW21}. Therefore
 \[
@@ -239,17 +236,17 @@ We first check Assumption~1 for $\boldsymbol d$. Under $Q_n$, by \cite[Theorem~2
 \]
 For $\varepsilon>0$ let $\mathcal D_n(\varepsilon)$ be the set of degree sequences with sum $2m$ such that $|\PP(D_n=k)-\PP(D=k)|\le\varepsilon$ for $k\le1/\varepsilon$, $|\EE D_n^3-\EE D^3|\le\varepsilon$, and $|n^{1/3}(\nu_n-1)-\lambda|\le\varepsilon$. We have shown that these conditions hold with $Q_n$-probability tending to $1$ for each $\varepsilon>0$. By Theorem~\ref{thm:tv} at the critical time, $Q_n(A_n)\to e^{-3/4}>0$, so $\widehat Q_n(\boldsymbol d\in\mathcal D_n(\varepsilon))\to1$. Choose $\varepsilon_n\to0$ with $\widehat Q_n(\boldsymbol d\in\mathcal D_n(\varepsilon_n))\to1$.
 
-Let $f$ be bounded and continuous on $\ldown$, and let $g_n(\boldsymbol d)$ be the expectation of $f$ at the scaled ordered component sizes of a uniform simple graph with degree sequence $\boldsymbol d$. Let $g_\infty$ be the expectation of $f$ at the ordered excursion lengths of \eqref{eq:W}. Every sequence $\boldsymbol d^{(n)}\in\mathcal D_n(\varepsilon_n)$ satisfies Assumption~1 of \cite{DHLS17} with $\bar D=D$: the bounds on $\PP(D_n=k)$ give $D_n\to D$ in distribution, the second condition gives $\EE D_n^3\to\EE D^3$, the third gives \eqref{eq:nu}, and $\PP(D=1)=\alpha(\alpha+1)^\alpha/(\alpha+2)^{\alpha+1}>0$. Hence $g_n(\boldsymbol d^{(n)})\to g_\infty$ by Lemma~\ref{lem:simple}, for every such choice, and therefore $\sup_{\boldsymbol d\in\mathcal D_n(\varepsilon_n)}|g_n(\boldsymbol d)-g_\infty|\to0$. Consequently the expectation of $f$ at the scaled component sizes under $\widehat Q_n$ is $\EE_{\widehat Q_n}g_n(\boldsymbol d)\to g_\infty$. By Theorem~\ref{thm:tv} the same holds under $P_n$, since the component sizes are a function of the path.
+Let $f$ be bounded and continuous on $\ldown$, and let $\varphi_n(\boldsymbol d)$ be the expectation of $f$ at the scaled ordered component sizes of a uniform simple graph with degree sequence $\boldsymbol d$. Let $\varphi_\infty$ be the expectation of $f$ at the ordered excursion lengths of \eqref{eq:W}. Every sequence $\boldsymbol d^{(n)}\in\mathcal D_n(\varepsilon_n)$ satisfies Assumption~1 of \cite{DHLS17} with $\bar D=D$: the bounds on $\PP(D_n=k)$ give $D_n\to D$ in distribution, the second condition gives $\EE D_n^3\to\EE D^3$, the third gives \eqref{eq:nu}, and $\PP(D=1)=\alpha(\alpha+1)^\alpha/(\alpha+2)^{\alpha+1}>0$. Hence $\varphi_n(\boldsymbol d^{(n)})\to \varphi_\infty$ by Lemma~\ref{lem:simple}, for every such choice, and therefore $\sup_{\boldsymbol d\in\mathcal D_n(\varepsilon_n)}|\varphi_n(\boldsymbol d)-\varphi_\infty|\to0$. Consequently the expectation of $f$ at the scaled component sizes under $\widehat Q_n$ is $\EE_{\widehat Q_n}\varphi_n(\boldsymbol d)\to \varphi_\infty$. By Theorem~\ref{thm:tv} the same holds under $P_n$, since the component sizes are a function of the path.
 
 It remains to identify the limit. With $\bar\mu=\mu$ and $\bar\eta=\eta=\mu^2\kappa$, the process \eqref{eq:W} is $X(y)=\sqrt\kappa\,B(y)+\lambda y-\kappa y^2/(2\mu)$. Substitute $y=a_\alpha u$ with $a_\alpha^3=\mu^2/\kappa$ and divide by $\sqrt{\kappa a_\alpha}$: by Brownian scaling the result has the law of
 \[
-B(u)+\lambda\sqrt{a_\alpha/\kappa}\,u-\frac{\sqrt\kappa\,a_\alpha^{3/2}}{2\mu}u^2=B(u)+b_\alpha\lambda u-\frac{u^2}{2},\qquad b_\alpha=\sqrt{a_\alpha/\kappa},\quad b_\alpha^3=\frac{\mu}{\kappa^2}.
+B(u)+\lambda\sqrt{a_\alpha/\kappa}\,u-\frac{\sqrt\kappa\,a_\alpha^{3/2}}{2\mu}u^2=B(u)+\theta_\alpha\lambda u-\frac{u^2}{2},\qquad \theta_\alpha=\sqrt{a_\alpha/\kappa},\quad \theta_\alpha^3=\frac{\mu}{\kappa^2}.
 \]
-Dividing a process by a positive constant does not change its excursion intervals, and the time change multiplies their lengths by $a_\alpha$. Hence the limit is $a_\alpha\,\boldsymbol\gamma(b_\alpha\lambda)$, and $a_\alpha^3=\mu^2/\kappa=\alpha^2/((\alpha+1)(\alpha+2))$, $b_\alpha^3=\mu/\kappa^2=\alpha(\alpha+1)/(\alpha+2)^2$.
+Dividing a process by a positive constant does not change its excursion intervals, and the time change multiplies their lengths by $a_\alpha$. Hence the limit is $a_\alpha\,\boldsymbol\gamma(\theta_\alpha\lambda)$, and $a_\alpha^3=\mu^2/\kappa=\alpha^2/((\alpha+1)(\alpha+2))$, $\theta_\alpha^3=\mu/\kappa^2=\alpha(\alpha+1)/(\alpha+2)^2$.
 \end{proof}
 
 \begin{remark}
-The proof also works for $\lambda=\lambda_n\to\lambda$.
+The proof also works for $\lambda=\lambda_n\to\lambda$, since $\lambda$ enters Assumption~1 of \cite{DHLS17} and the estimate of $\nu_n$ only through the limit of $n^{1/3}(\nu_n-1)$.
 \end{remark}
 
 \section*{Acknowledgments and funding}
@@ -279,9 +276,10 @@ Symbol & Meaning & Defined in \\ \midrule
 \endhead
 $[n]$ & the vertex set & Section~\ref{sec:intro} \\
 $\alpha$ & the fixed attachment parameter, $\alpha>0$ & Section~\ref{sec:intro} \\
-$G_k$ & the graph after $k$ steps, $G_0$ empty & Section~\ref{sec:intro} \\
+$G_k$ & the graph after $k$ edges, $G_0$ empty & Section~\ref{sec:intro} \\
 $d_v$ & the degree of the vertex $v$ in the current graph & Section~\ref{sec:intro} \\
 $G^\alpha_{n,m}$ & the simple process after $m$ edges & Section~\ref{sec:intro} \\
+$E(G_k)$ & the edge set of $G_k$ & Section~\ref{sec:intro} \\
 $m_c$ & the critical number of edges, $\alpha n/(2(\alpha+1))$ & Section~\ref{sec:intro} \\
 $G^{\alpha,*}_{n,m}$ & the multigraph process after $m$ edges & Section~\ref{sec:intro} \\
 $L_j$ & the $j$th largest component size & Section~\ref{sec:intro} \\
@@ -290,35 +288,39 @@ $\omega_i$ & the $i$th label drawn from the urn & Section~\ref{sec:intro-multi} 
 $w_v$ & the weight $d_v+\alpha$ of $v$ & Section~\ref{sec:intro-multi} \\
 $W$ & the total weight $n\alpha+2k$ after $k$ edges & Section~\ref{sec:intro-multi} \\
 $\boldsymbol d$, $G^*_{\boldsymbol d}$ & a degree sequence and the configuration model with that degree sequence & Section~\ref{sec:intro-multi} \\
-$P_n$, $Q_n$ & the laws of the edge sequences of the simple and of the multigraph process & Section~\ref{sec:intro-multi} \\
-$A_n$ & the event that the multigraph process stays simple up to $m$ edges & Section~\ref{sec:intro-multi} \\
+$P_n$, $Q_n$ & the law of the path of the simple process, and the law of the first $m$ edges of the multigraph process & Section~\ref{sec:intro-multi} \\
+$A_n$ & the event that $G^{\alpha,*}_{n,m}$ is simple & Section~\ref{sec:intro-multi} \\
 $T$ & the limit of $m/n$ & Section~\ref{sec:intro} \\
 $c$ & the constant $(\alpha+1)/\alpha$ & Section~\ref{sec:intro} \\
-$\|\cdot\|_{\TV}$ & total variation distance & Theorem~\ref{thm:tv} \\
+$\|\cdot\|_{\TV}$ & total variation distance & Section~\ref{sec:intro-multi} \\
 $(x)_d$ & the rising factorial $x(x+1)\cdots(x+d-1)$ & Section~\ref{sec:results} \\
 $\Pi_{n,m}$ & the law on simple graphs with weight $\prod_v(\alpha)_{d_v}$ & Corollary~\ref{cor:static} \\
 $\boldsymbol\gamma(\theta)$ & the ordered excursion lengths of $B(u)+\theta u-u^2/2$ above its running minimum & Section~\ref{sec:results} \\
 $B$ & standard Brownian motion & Section~\ref{sec:results} \\
+$u$ & a vertex; in $\boldsymbol\gamma(\theta)$ and in the last section, the time variable of $B(u)+\theta u-u^2/2$ & Section~\ref{sec:intro} \\
 $\ldown$ & non-increasing square-summable sequences with the $\ell^2$ metric & Section~\ref{sec:results} \\
-$a_\alpha$, $b_\alpha$ & the scale and window constants of the limit & Theorem~\ref{thm:window} \\
+$a_\alpha$, $\theta_\alpha$ & the scale and window constants of the limit & Theorem~\ref{thm:window} \\
 $\PP$, $\EE$ & probability and expectation & Section~\ref{sec:lik} \\
 $S_k$, $R_k$ & $\sum_v w_v^2$ and $\sum_{uv\in E(G_k)} w_uw_v$ & Section~\ref{sec:intro} \\
-$g$ & a sequence of distinct edges & Lemma~\ref{lem:lik} \\
-$b_k$ & the probability that the next multigraph step is a loop or joins two adjacent vertices & Section~\ref{sec:intro} \\
+$g$ & a path, a sequence of $m$ distinct edges, none of them a loop & Section~\ref{sec:intro} \\
+$b_k$ & the conditional probability, given that the multigraph process is at $G_k$, that its next edge is a loop or joins two adjacent vertices & Section~\ref{sec:intro} \\
 $Z_n$ & the likelihood ratio $\prod_k(1-b_k)$ & Lemma~\ref{lem:lik} \\
 $C$ & a fixed bound on $k/n$ & Section~\ref{sec:lik} \\
 $K_n$, $M_n$ & the degree bound $n^{1/8}$ and $\alpha+K_n$ & Section~\ref{sec:fluid} \\
 $N_v$ & the sum of the weights of the vertices adjacent to $v$ & Section~\ref{sec:fluid} \\
 $U$, $V$ & independent labels with $\PP(U=v)=w_v/W$ & Section~\ref{sec:fluid} \\
 $s(t)$, $r(t)$, $x(t)$ & the fluid limits of $S_k/n$ and $R_k/n$, and $\alpha+2t$ & Lemma~\ref{lem:fluid} \\
-$\nu$, $\nu_n$ & $\sum_v d_v(d_v-1)/\sum_v d_v$, for a degree sequence; $\nu_n$ is the value for $\boldsymbol d$ in the critical window & Section~\ref{sec:prooftv} \\
+$z$ & the limit $e^{-cT-c^2T^2}$ of $Q_n(A_n)$ & Section~\ref{sec:prooftv} \\
+$\nu(\boldsymbol d)$, $\nu_n$ & $\sum_v d_v(d_v-1)/\sum_v d_v$ for a degree sequence $\boldsymbol d$, and its value for the degree sequence of Assumption~1 of \cite{DHLS17} & Section~\ref{sec:prooftv} \\
 $D$ & the negative binomial limit of a vertex degree at $m\sim m_c$ & Section~\ref{sec:window} \\
 $\mu$, $\kappa$, $\eta$ & $\mu=\EE D=\alpha/(\alpha+1)$, $\kappa=(\alpha+2)/(\alpha+1)$, $\eta=\EE D\,\EE D^3-(\EE D^2)^2=\mu^2\kappa$ & Section~\ref{sec:window} \\
 $D_n$ & the degree of a uniform vertex in a degree sequence $\boldsymbol d$ & Section~\ref{sec:window} \\
+$y$, $X(y)$ & a vertex, in sums over pairs $xy$ and in $N_v$; in the last section, the time variable of the limit process of Dhara, van der Hofstad, van Leeuwaarden and Sen, and that process for $\bar D=D$ & Section~\ref{sec:lik} \\
 $\bar D$, $\bar\mu$, $\bar\eta$ & the limit of $D_n$ in Assumption~1 of \cite{DHLS17}, $\bar\mu=\EE\bar D$ and $\bar\eta=\EE\bar D\,\EE\bar D^3-(\EE\bar D^2)^2$ & Section~\ref{sec:window} \\
 $Y_n$, $p_n$ & a negative binomial variable with parameters $\alpha$ and $p_n=2m/(n\alpha+2m)$ & Section~\ref{sec:window} \\
 $\mathbf 1_A$, $A$ & the indicator of the event that the configuration model $G=G^*_{\boldsymbol d}$ is simple, and that event & proof of Lemma~\ref{lem:simple} \\
 $\Delta_n$, $\ell_n$ & the maximum and the sum of the degrees in $\boldsymbol d$ & proof of Lemma~\ref{lem:simple} \\
+$J$ & a truncation level for the degrees & proof of Lemma~\ref{lem:simple} \\
 $\boldsymbol\zeta=(\zeta_j)$, $\boldsymbol\xi=(\xi_j)$ & the scaled ordered component sizes of the configuration model and their limit & proof of Lemma~\ref{lem:simple} \\
 $\pi_k$ & the truncation $x\mapsto(x_1,\dots,x_k,0,0,\dots)$ & proof of Lemma~\ref{lem:simple} \\
 $h$, $\varrho$ & a bounded uniformly continuous function on $\mathbb R^k$ and its modulus of continuity & proof of Lemma~\ref{lem:simple} \\
@@ -329,22 +331,22 @@ $\beta$, $\beta'$, $\varepsilon'$ & constants bounding the number of discovered 
 $\Sigma_{\mathcal V}$ & the total degree $\sum_{v\in\mathcal V}d_v$ of the discovered vertices & proof of Lemma~\ref{lem:simple} \\
 $\boldsymbol H$, $\delta$, $\mathcal E$ & the scaled ordered component sizes of $G_{\rm in}$, a size threshold, and the event that every component started after time $t_0n^{2/3}$ has at most $\delta n^{2/3}$ vertices & proof of Lemma~\ref{lem:simple} \\
 $\widehat Q_n$ & the law $Q_n(\cdot\mid A_n)$ & Section~\ref{sec:window} \\
-$\mathcal D_n(\varepsilon)$ & degree sequences close to the limit, within $\varepsilon$ & Section~\ref{sec:window} \\
-$f$, $g_n$, $g_\infty$ & a bounded continuous test function on $\ldown$, its mean over uniform simple graphs with a given degree sequence, and its mean at the limit & Section~\ref{sec:window} \\
+$\mathcal D_n(\varepsilon)$, $\varepsilon_n$ & degree sequences close to the limit, within $\varepsilon$, and a sequence $\varepsilon_n\to0$ with $\widehat Q_n(\boldsymbol d\in\mathcal D_n(\varepsilon_n))\to1$ & Section~\ref{sec:window} \\
+$f$, $\varphi_n$, $\varphi_\infty$ & a bounded continuous test function on $\ldown$, its mean over uniform simple graphs with a given degree sequence, and its mean at the limit & Section~\ref{sec:window} \\
 \bottomrule\end{longtable}}
 
 \begin{thebibliography}{99}
 \bibitem{Al97} D.~Aldous, Brownian excursions, critical random graphs and the multiplicative coalescent, \emph{Ann. Probab.} \textbf{25} (1997), 812--854.
 \bibitem{BS20} S.~Bhamidi and S.~Sen, Geometry of the vacant set left by random walk on random graphs, Wright's constants, and critical random graphs with prescribed degrees, \emph{Random Structures Algorithms} \textbf{56} (2020), 676--721, doi:10.1002/rsa.20880, arXiv:1608.07153.
 \bibitem{Ch26} Y.~Chen, Sharp asymptotics for the largest component in the subcritical regime of preferential attachment without vertex growth, preprint, 2026, arXiv:2607.00731.
-\bibitem{DHLS17} S.~Dhara, R.~van der Hofstad, J.~S.~H.~van Leeuwaarden and S.~Sen, Critical window for the configuration model: finite third moment degrees, \emph{Electron. J. Probab.} \textbf{22} (2017), Paper No.~16, 33 pp.
+\bibitem{DHLS17} S.~Dhara, R.~van der Hofstad, J.~S.~H.~van Leeuwaarden and S.~Sen, Critical window for the configuration model: finite third moment degrees, \emph{Electron. J. Probab.} \textbf{22} (2017), Paper No.~16, 33 pp., doi:10.1214/17-EJP29.
 \bibitem{DHLS20} S.~Dhara, R.~van der Hofstad, J.~S.~H.~van Leeuwaarden and S.~Sen, Heavy-tailed configuration models at criticality, \emph{Ann. Inst. Henri Poincar\'e Probab. Stat.} \textbf{56} (2020), 1515--1558, doi:10.1214/19-AIHP980, arXiv:1612.00650.
 \bibitem{HM12} H.~Hatami and M.~Molloy, The scaling window for a random graph with a given degree sequence, \emph{Random Structures Algorithms} \textbf{41} (2012), 99--123, doi:10.1002/rsa.20394.
 \bibitem{Ja09} S.~Janson, The probability that a random multigraph is simple, \emph{Combin. Probab. Comput.} \textbf{18} (2009), 205--225, doi:10.1017/S0963548308009644.
-\bibitem{JW21} S.~Janson and L.~Warnke, Preferential attachment without vertex growth: emergence of the giant component, \emph{Ann. Appl. Probab.} \textbf{31} (2021), 1523--1547.
+\bibitem{JW21} S.~Janson and L.~Warnke, Preferential attachment without vertex growth: emergence of the giant component, \emph{Ann. Appl. Probab.} \textbf{31} (2021), 1523--1547, doi:10.1214/20-AAP1610.
 \bibitem{Jo14} A.~Joseph, The component sizes of a critical random graph with given degree sequence, \emph{Ann. Appl. Probab.} \textbf{24} (2014), 2560--2594, doi:10.1214/13-AAP985.
 \bibitem{Ma25} N.~Maitra, On random bipartite graphs evolving by degrees, preprint, 2025, arXiv:2509.23943.
-\bibitem{Pi10} B.~Pittel, On a random graph evolving by degrees, \emph{Adv. Math.} \textbf{223} (2010), 619--671.
+\bibitem{Pi10} B.~Pittel, On a random graph evolving by degrees, \emph{Adv. Math.} \textbf{223} (2010), 619--671, doi:10.1016/j.aim.2009.08.015.
 \bibitem{Ri12} O.~Riordan, The phase transition in the configuration model, \emph{Combin. Probab. Comput.} \textbf{21} (2012), 265--299, doi:10.1017/S0963548311000666.
 \bibitem{MathBrainRepo} Y.~Shmalo, \emph{Math Brain}, public repository, 2026, \url{https://github.com/yspennstate/math-brain-public/tree/8c9a6bd478c4ec4082347151b7ae16db50c917dd}.
 \bibitem{MathBrainPaper} Y.~Shmalo, \emph{Math Brain: shared, auditable memory for multi-agent mathematical research}, October 2026, doi:10.5281/zenodo.24150837, \url{https://github.com/yspennstate/math-brain-public/tree/main/papers/math-brain-2026-10-24}.
